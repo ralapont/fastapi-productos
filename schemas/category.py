@@ -12,5 +12,7 @@ class CategoryCreate(CategoryBase):
 class CategoryRead(CategoryBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
+

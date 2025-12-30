@@ -10,7 +10,7 @@ class Product(SQLModel, table=True):
     codigo: str
     nombre: str
     descripcion: Optional[str] = None
-    precio_unitario: Decimal
+    precio_unitario: Decimal = Field(...)
     categoria_id: Optional[int] = Field(default=None, foreign_key="category.id")
 
     category: Optional["Category"] = Relationship(back_populates="products")
